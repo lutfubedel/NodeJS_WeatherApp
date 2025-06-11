@@ -31,7 +31,7 @@ app.get('/help', (req, res) => {
      })
 });
 
-
+// about page
 app.get('/about',(req,res) => {
     res.render("about", {
         title: "About HBS",
