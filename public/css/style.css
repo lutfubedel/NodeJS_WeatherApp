@@ -1,0 +1,187 @@
+/* Genel yapı */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    color: #333;
+}
+
+/* Sayfa sarmalayıcı */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Ekranın ortasında yer alacak ana içerik */
+.center-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  /* İçerikler dikey sıraya yerleştirilsin */
+    text-align: center;      /* Yazılar ortalanacak */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(44, 62, 80, 0.9);
+    padding: 1rem 2rem;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ecf0f1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 2px;
+}
+
+.nav-links li a:hover {
+    color: #1abc9c;
+    border-bottom: 2px solid #1abc9c;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(44, 62, 80, 0.9);
+    color: #ecf0f1;
+    text-align: center;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+    position: absolute;  
+    bottom: 0;         
+    width: 100%;       
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Mobil uyum */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .weather-container {
+        width: 100%;
+    }
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem auto;
+    width: fit-content;
+}
+
+
+/* Input alanı */
+form input {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+    max-width: 90%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #1abc9c;
+    box-shadow: 0 0 8px rgba(26, 188, 156, 0.4);
+}
+
+/* Buton */
+form button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+/* Sonuçları gösteren paragraflar */
+#p1, #p2, #p3 {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c3e50;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 300px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* İçerik boşsa şeffaflık */
+#p1:empty,
+#p2:empty,
+#p3:empty {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+
+
